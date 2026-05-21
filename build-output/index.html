@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YourTransport - Plataforma Premium de Reserva y Tránsito Inteligente</title>
+    <meta name="description" content="Experimenta una movilidad fluida con YourTransport. Planifica rutas, reserva microtránsito y sigue conexiones de transporte público con nuestro elegante sistema de navegación moderno." />
+    <!-- Metadatos de Open Graph -->
+    <meta property="og:title" content="YourTransport - Tránsito Inteligente y Reservas" />
+    <meta property="og:description" content="Reserva boletos, planifica rutas y consulta horarios en tiempo real con facilidad. Experimenta la movilidad de próxima generación." />
+    <meta property="og:type" content="website" />
+    <script type="module" crossorigin src="./assets/index-BfICYzqP.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-C1Of8_kG.css">
+  </head>
+  <body>
+    <!-- Encabezado de Navegación -->
+    <header id="main-header">
+      <div class="container nav-container">
+        <a href="#" class="logo" id="nav-logo">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-1.1 0-2 .9-2 2v7c0 .6.4 1 1 1h3" />
+            <circle cx="7" cy="17" r="2" />
+            <circle cx="17" cy="17" r="2" />
+            <path d="M13 17h2" />
+            <path d="M14 9H9" />
+          </svg>
+          YourTransport
+        </a>
+        <nav>
+          <ul class="nav-links">
+            <li><a href="#" class="active" id="link-home">Inicio</a></li>
+            <li><a href="#fare-calculator" id="link-fare">Calculadora de Tarifas</a></li>
+            <li><a href="#services" id="id-nav-services">Servicios</a></li>
+            <li><a href="#about" id="link-about">Acerca de</a></li>
+          </ul>
+        </nav>
+        <div class="header-actions">
+          <button class="btn btn-secondary" style="padding: 0.6rem 1.25rem; font-size: 0.9rem;" id="btn-login">Portal de Clientes</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main>
+      <!-- Sección Hero -->
+      <section class="hero" id="home">
+        <div class="hero-glow-1"></div>
+        <div class="hero-glow-2"></div>
+        
+        <div class="container hero-grid">
+          <!-- Texto del Hero -->
+          <div class="hero-content">
+            <div class="badge badge-cyan" id="hero-badge">Plataforma de Movilidad Inteligente</div>
+            <h1 style="margin-top: 1rem;">Navega por tu ciudad <span>sin esfuerzo</span></h1>
+            <p>YourTransport es la red de transporte premium que te conecta con autobuses, trenes y microtránsito. Planifica tu viaje, reserva tu asiento y viaja de manera más inteligente hoy mismo.</p>
+            <div class="btn-group">
+              <a href="#fare-calculator" class="btn btn-primary" id="hero-btn-primary">
+                Calculadora de Tarifas
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+              <a href="#services" class="btn btn-secondary" id="hero-btn-secondary">Explorar Servicios</a>
+            </div>
+          </div>
+
+          <!-- Widget de Reserva Interactivo -->
+          <div class="hero-widget glass-card" id="booking-widget">
+            <div class="widget-tabs">
+              <button class="widget-tab active" id="tab-book" data-tab="book">Reserva Rápida</button>
+              <button class="widget-tab" id="tab-route" data-tab="route">Buscador de Rutas</button>
+            </div>
+            
+            <!-- Formulario de Reserva -->
+            <form class="widget-form" id="form-booking">
+              <div class="input-group">
+                <label class="input-label" for="booking-transit">Tipo de Transporte</label>
+                <select class="input-field" id="booking-transit" name="transitType">
+                  <option value="micro">Lanzadera de Microtránsito</option>
+                  <option value="bus">Autobús Expreso Interurbano</option>
+                  <option value="train">Metro Hyper-Rail</option>
+                </select>
+              </div>
+              
+              <div class="form-row-2">
+                <div class="input-group">
+                  <label class="input-label" for="booking-origin">Origen</label>
+                  <input type="text" class="input-field" id="booking-origin" placeholder="Seleccionar Estación" value="Terminal Central" required />
+                </div>
+                <div class="input-group">
+                  <label class="input-label" for="booking-destination">Destino</label>
+                  <input type="text" class="input-field" id="booking-destination" placeholder="Seleccionar Estación" placeholder="¿A dónde vas?" required />
+                </div>
+              </div>
+
+              <div class="form-row-2">
+                <div class="input-group">
+                  <label class="input-label" for="booking-date">Fecha</label>
+                  <input type="date" class="input-field" id="booking-date" required />
+                </div>
+                <div class="input-group">
+                  <label class="input-label" for="booking-time">Hora</label>
+                  <input type="time" class="input-field" id="booking-time" required />
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary" id="btn-submit-booking" style="width: 100%; margin-top: 0.5rem;">
+                Calcular Tarifa y Reservar
+              </button>
+            </form>
+
+            <!-- Formulario de Buscador de Rutas -->
+            <form class="widget-form hidden" id="form-route">
+              <div class="input-group">
+                <label class="input-label" for="route-origin">Ubicación de Salida</label>
+                <input type="text" class="input-field" id="route-origin" placeholder="Ingresa dirección de salida" required />
+              </div>
+              <div class="input-group">
+                <label class="input-label" for="route-destination">Ubicación de Destino</label>
+                <input type="text" class="input-field" id="route-destination" placeholder="Ingresa dirección de destino" required />
+              </div>
+              <div class="input-group">
+                <label class="input-label" for="route-preference">Preferencia</label>
+                <select class="input-field" id="route-preference">
+                  <option value="fastest">Tiempo de viaje más rápido</option>
+                  <option value="cheapest">Tarifa más baja</option>
+                  <option value="greenest">Ruta ecológica (Baja en CO2)</option>
+                </select>
+              </div>
+              <button type="submit" class="btn btn-primary" id="btn-submit-route" style="width: 100%;">
+                Buscar Rutas
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sección de la Calculadora de Tarifas -->
+      <section class="map-section" id="fare-calculator">
+        <div class="container">
+          <div class="section-header">
+            <div class="badge badge-cyan" id="calc-badge">Motor de Precios de Viaje</div>
+            <h2>Estima tu Tarifa</h2>
+            <p>Calcula tarifas de boletos precisas para autobuses, trenes y lanzaderas según tus destinos, horarios y clase de embarque preferida.</p>
+          </div>
+
+          <div class="map-container" style="min-height: auto;">
+            <!-- Formulario de Entradas de la Calculadora -->
+            <form class="widget-form glass-card" id="form-fare-calculator" style="border: none; padding: 0.5rem; background: transparent; backdrop-filter: none; box-shadow: none;">
+              <div class="form-row-2">
+                <div class="input-group">
+                  <label class="input-label" for="calc-direction">Dirección del Viaje</label>
+                  <select class="input-field" id="calc-direction" name="direction">
+                    <option value="one-way">Solo Ida</option>
+                    <option value="round-trip">Ida y Vuelta</option>
+                  </select>
+                </div>
+                <div class="input-group">
+                  <label class="input-label" for="calc-class">Clase de Embarque</label>
+                  <select class="input-field" id="calc-class" name="classGrade">
+                    <option value="standard">Clase Turista</option>
+                    <option value="premium">Clase Ejecutiva (+50%)</option>
+                    <option value="first">Primera Clase (+140%)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-row-2">
+                <div class="input-group">
+                  <label class="input-label" for="calc-origin">Estación de Origen</label>
+                  <select class="input-field" id="calc-origin" name="origin">
+                    <option value="central">Terminal Central</option>
+                    <option value="north">Depósito Puerta Norte</option>
+                    <option value="east">Estación Valle Este</option>
+                    <option value="south">Puerto Bahía Sur</option>
+                    <option value="west">Centro Tecnológico Costa Oeste</option>
+                  </select>
+                </div>
+                <div class="input-group">
+                  <label class="input-label" for="calc-destination">Estación de Destino</label>
+                  <select class="input-field" id="calc-destination" name="destination">
+                    <option value="east">Estación Valle Este</option>
+                    <option value="central">Terminal Central</option>
+                    <option value="north">Depósito Puerta Norte</option>
+                    <option value="south">Puerto Bahía Sur</option>
+                    <option value="west">Centro Tecnológico Costa Oeste</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Detalles de Salida -->
+              <div class="form-row-2">
+                <div class="input-group">
+                  <label class="input-label" for="calc-depart-date">Fecha de Salida</label>
+                  <input type="date" class="input-field" id="calc-depart-date" required />
+                </div>
+                <div class="input-group">
+                  <label class="input-label" for="calc-depart-time">Hora de Salida</label>
+                  <input type="time" class="input-field" id="calc-depart-time" required />
+                </div>
+              </div>
+
+              <!-- Detalles de Regreso Desplegables -->
+              <div class="form-row-2 hidden" id="return-details-container" style="transition: all var(--transition-normal);">
+                <div class="input-group">
+                  <label class="input-label" for="calc-return-date">Fecha de Regreso</label>
+                  <input type="date" class="input-field" id="calc-return-date" />
+                </div>
+                <div class="input-group">
+                  <label class="input-label" for="calc-return-time">Hora de Regreso</label>
+                  <input type="time" class="input-field" id="calc-return-time" />
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary" id="btn-submit-calculator" style="width: 100%; margin-top: 1rem;">
+                Calcular Precio Estimado
+              </button>
+            </form>
+
+            <!-- Panel de Resultados de la Calculadora -->
+            <div id="calculator-results" style="display: flex; flex-direction: column; justify-content: center; min-height: 380px;">
+              <!-- Se muestra inicialmente -->
+              <div class="glass-card" style="text-align: center; border-style: dashed; border-color: rgba(255,255,255,0.08); display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; padding: 3rem;">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--accent-cyan)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.5; margin-bottom: 1.5rem;">
+                  <line x1="12" y1="1" x2="12" y2="23"></line>
+                  <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                </svg>
+                <h4 style="margin-bottom: 0.5rem; font-family: var(--font-heading);">Ningún viaje calculado</h4>
+                <p style="font-size: 0.85rem; max-width: 260px;">Completa los detalles de la izquierda y haz clic en calcular para ver el desglose de la tarifa de tu boleto.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sección de Servicios -->
+      <section class="services-section" id="services">
+        <div class="container">
+          <div class="section-header">
+            <div class="badge badge-cyan" id="services-badge">Nuestros Servicios</div>
+            <h2>Diseñado para el Viaje Moderno</h2>
+            <p>Descubre opciones de transporte inteligentes, sostenibles y confiables diseñadas para trasladarte de manera eficiente por la ciudad.</p>
+          </div>
+
+          <div class="grid grid-cols-3">
+            <!-- Servicio 1 -->
+            <div class="glass-card" id="service-card-1">
+              <div class="service-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                </svg>
+              </div>
+              <h3>Reserva Garantizada</h3>
+              <p>Reserva asientos con anticipación en las líneas de lanzadera. Dile adiós a los viajes abarrotados y a ir de pie.</p>
+            </div>
+
+            <!-- Servicio 2 -->
+            <div class="glass-card" id="service-card-2">
+              <div class="service-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                </svg>
+              </div>
+              <h3>Tarifas Dinámicas</h3>
+              <p>Obtén boletos más baratos durante las horas de menor actividad. Transparencia sin cargos ocultos de reserva.</p>
+            </div>
+
+            <!-- Servicio 3 -->
+            <div class="glass-card" id="service-card-3">
+              <div class="service-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10" />
+                  <polyline points="12 6 12 12 16 14" />
+                </svg>
+              </div>
+              <h3>Despacho en Tiempo Real</h3>
+              <p>Los autobuses y trenes se sincronizan directamente con el flujo urbano, garantizando tiempos de espera menores a 5 minutos.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer id="about">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-about">
+            <a href="#" class="logo" style="margin-bottom: 1rem;" id="footer-logo">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-1.1 0-2 .9-2 2v7c0 .6.4 1 1 1h3" />
+                <circle cx="7" cy="17" r="2" />
+                <circle cx="17" cy="17" r="2" />
+                <path d="M13 17h2" />
+                <path d="M14 9H9" />
+              </svg>
+              YourTransport
+            </a>
+            <p>Redefiniendo el transporte diario con algoritmos modernos de enrutamiento y soluciones de confort para el pasajero.</p>
+          </div>
+          
+          <div class="footer-column">
+            <h4>Pasajeros</h4>
+            <ul class="footer-links">
+              <li><a href="#" id="foot-link-schedules">Horarios</a></li>
+              <li><a href="#" id="foot-link-fares">Tarifas</a></li>
+              <li><a href="#" id="foot-link-stations">Mapa del Sistema</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h4>Servicios</h4>
+            <ul class="footer-links">
+              <li><a href="#" id="foot-link-micro">Microtránsito</a></li>
+              <li><a href="#" id="foot-link-express">Autobús Expreso</a></li>
+              <li><a href="#" id="foot-link-rail">Hyper-Rail</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h4>Soporte</h4>
+            <ul class="footer-links">
+              <li><a href="#" id="foot-link-help">Centro de Ayuda</a></li>
+              <li><a href="#" id="foot-link-status">Alertas de Servicio</a></li>
+              <li><a href="#" id="foot-link-contact">Contacto</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2026 YourTransport. Todos los derechos reservados.</p>
+          <div style="display: flex; gap: 1.5rem;">
+            <a href="#" id="foot-link-privacy">Política de Privacidad</a>
+            <a href="#" id="foot-link-terms">Términos de Servicio</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Script principal -->
+  </body>
+</html>
