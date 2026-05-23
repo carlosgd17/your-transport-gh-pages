@@ -82,4 +82,66 @@ document.addEventListener('DOMContentLoaded', () => {
       alert('Se ha solicitado una conexión segura al Portal de Clientes. Los autenticadores están inicializados en el entorno de desarrollo (Sandbox).');
     });
   }
+
+  // Carousel Gallery Control Logic
+  const carouselTrack = document.querySelector('.carousel-track');
+  const prevBtn = document.getElementById('carousel-prev-btn');
+  const nextBtn = document.getElementById('carousel-next-btn');
+  const carouselDots = document.querySelectorAll('.carousel-dot');
+
+  if (carouselTrack && prevBtn && nextBtn) {
+    prevBtn.addEventListener('click', () => {
+      const slideWidth = carouselTrack.clientWidth;
+      const scrollPosition = carouselTrack.scrollLeft;
+      const currentIndex = Math.round(scrollPosition / slideWidth);
+      const maxIndex = carouselDots.length - 1;
+
+      if (currentIndex === 0) {
+        // Wrap around to the last slide
+        carouselTrack.scrollTo({ left: slideWidth * maxIndex, behavior: 'smooth' });
+      } else {
+        carouselTrack.scrollTo({ left: slideWidth * (currentIndex - 1), behavior: 'smooth' });
+      }
+    });
+
+    nextBtn.addEventListener('click', () => {
+      const slideWidth = carouselTrack.clientWidth;
+      const scrollPosition = carouselTrack.scrollLeft;
+      const currentIndex = Math.round(scrollPosition / slideWidth);
+      const maxIndex = carouselDots.length - 1;
+
+      if (currentIndex === maxIndex) {
+        // Wrap around to the first slide
+        carouselTrack.scrollTo({ left: 0, behavior: 'smooth' });
+      } else {
+        carouselTrack.scrollTo({ left: slideWidth * (currentIndex + 1), behavior: 'smooth' });
+      }
+    });
+
+    // Update active dot color indicator as carousel scrolls
+    carouselTrack.addEventListener('scroll', () => {
+      const scrollPosition = carouselTrack.scrollLeft;
+      const slideWidth = carouselTrack.clientWidth;
+      
+      // Prevent division by zero if width is unexpected
+      if (slideWidth > 0) {
+        const activeIndex = Math.round(scrollPosition / slideWidth);
+        carouselDots.forEach((dot, idx) => {
+          if (idx === activeIndex) {
+            dot.classList.add('active');
+          } else {
+            dot.classList.remove('active');
+          }
+        });
+      }
+    });
+
+    // Make dot indicators clickable to jump directly to slides
+    carouselDots.forEach((dot, idx) => {
+      dot.addEventListener('click', () => {
+        const slideWidth = carouselTrack.clientWidth;
+        carouselTrack.scrollTo({ left: slideWidth * idx, behavior: 'smooth' });
+      });
+    });
+  }
 });

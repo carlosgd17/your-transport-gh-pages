@@ -122,7 +122,7 @@ a {
 }
 
 a:hover {
-  color: #fa9200; /*var(--accent-blue);*/
+  color: #032b80; /*var(--accent-blue);*/
 }
 
 /* --- LAYOUT UTILITIES --- */
@@ -908,4 +908,63 @@ footer {
   h1 {
     font-size: clamp(2rem, 8vw, 2.75rem) !important;
   }
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera in carousel gallery */
+.carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
+/* Carousel Prev/Next Buttons Style */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-glass);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all var(--transition-fast);
+}
+
+.carousel-btn:hover {
+  background: var(--bg-secondary);
+  transform: translateY(-50%) scale(1.08);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.carousel-btn.prev-btn {
+  left: 1rem;
+}
+
+.carousel-btn.next-btn {
+  right: 1rem;
+}
+
+/* Carousel Dots Indicators */
+.carousel-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--border-glass);
+  cursor: pointer;
+  transition: background var(--transition-fast), transform var(--transition-fast);
+}
+
+.carousel-dot:hover {
+  transform: scale(1.25);
+  background: color-mix(in srgb, var(--accent-cyan) 60%, transparent);
+}
+
+.carousel-dot.active {
+  background: var(--accent-cyan);
+  transform: scale(1.2);
 }

@@ -2,34 +2,30 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/jpeg" href="./src/assets/gusi-logo.jpg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>YourTransport - Plataforma Premium de Reserva y Tránsito Inteligente</title>
+    <title>GUSI Transportes</title>
     <meta name="description" content="Experimenta una movilidad fluida con YourTransport. Planifica rutas, reserva microtránsito y sigue conexiones de transporte público con nuestro elegante sistema de navegación moderno." />
     <!-- Metadatos de Open Graph -->
-    <meta property="og:title" content="YourTransport - Tránsito Inteligente y Reservas" />
+    <meta property="og:title" content="GUSI Transportes - Reserva y Cotización" />
     <meta property="og:description" content="Reserva boletos, planifica rutas y consulta horarios en tiempo real con facilidad. Experimenta la movilidad de próxima generación." />
+    <meta property="og:image" content="./src/assets/gusi-logo.jpg" />
     <meta property="og:type" content="website" />
   </head>
   <body>
     <!-- Encabezado de Navegación -->
     <header id="main-header">
       <div class="container nav-container">
-        <a href="#" class="logo" id="nav-logo">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-1.1 0-2 .9-2 2v7c0 .6.4 1 1 1h3" />
-            <circle cx="7" cy="17" r="2" />
-            <circle cx="17" cy="17" r="2" />
-            <path d="M13 17h2" />
-            <path d="M14 9H9" />
-          </svg>
-          YourTransport
+        <a href="#" class="logo" id="nav-logo" style="display: flex; align-items: center; gap: 0.75rem;">
+          <img src="./src/assets/gusi-logo.jpg" alt="Logo GUSI" style="height: 36px; width: auto; border-radius: var(--radius-sm);" />
+          GUSI Transportes
         </a>
         <nav id="main-nav">
           <ul class="nav-links">
             <li><a href="#" class="active" id="link-home">Inicio</a></li>
             <li><a href="#fare-calculator" id="link-fare">Calculadora de Tarifas</a></li>
             <li><a href="#services" id="id-nav-services">Servicios</a></li>
+            <li><a href="#testimonials" id="link-testimonials">Opiniones</a></li>
             <li><a href="#about" id="link-about">Acerca de</a></li>
           </ul>
           <div class="mobile-menu-actions">
@@ -61,7 +57,7 @@
           <div class="hero-content">
             <div class="badge badge-cyan" id="hero-badge">Plataforma de Movilidad Inteligente</div>
             <h1 style="margin-top: 1rem;">Navega por tu ciudad <span>sin esfuerzo</span></h1>
-            <p>YourTransport es la red de transporte premium que te conecta con autobuses, trenes y microtránsito. Planifica tu viaje, reserva tu asiento y viaja de manera más inteligente hoy mismo.</p>
+            <p>En GUSI Transportes, nos dedicamos a ofrecer servicios de transporte seguros, accesibles y eficientes para satisfacer tus necesidades de movilidad.</p>
             <div class="btn-group">
               <a href="#fare-calculator" class="btn btn-primary" id="hero-btn-primary">
                 Calculadora de Tarifas
@@ -83,9 +79,9 @@
               <div class="input-group">
                 <label class="input-label" for="booking-transit">Tipo de Transporte</label>
                 <select class="input-field" id="booking-transit" name="transitType">
-                  <option value="micro">Lanzadera de Microtránsito</option>
-                  <option value="bus">Autobús Expreso Interurbano</option>
-                  <option value="train">Metro Hyper-Rail</option>
+                  <option value="ejecutivo">Ejecutivo</option>
+                  <option value="escolar">Escolar</option>
+                  <option value="turismo">Turismo</option>
                 </select>
               </div>
               
@@ -138,6 +134,67 @@
                 Buscar Rutas
               </button>
             </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sección del Carrusel de Imágenes -->
+      <section class="carousel-section" id="gallery" style="padding: 4rem 0 2rem 0; background: var(--bg-primary);">
+        <div class="container">
+          <div class="section-header" style="text-align: center; max-width: 600px; margin: 0 auto 2.5rem auto;">
+            <div class="badge badge-cyan" id="gallery-badge">Nuestra Flota</div>
+            <h2>Galería de Viajes</h2>
+            <p>Echa un vistazo a la calidad, confort y modernidad de nuestras unidades.</p>
+          </div>
+
+          <div class="carousel-wrapper" style="position: relative; overflow: hidden; border-radius: var(--radius-lg); box-shadow: var(--shadow-main);">
+            <!-- Prev/Next Navigation Buttons -->
+            <button class="carousel-btn prev-btn" id="carousel-prev-btn" aria-label="Anterior Slide">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+            </button>
+            <button class="carousel-btn next-btn" id="carousel-next-btn" aria-label="Siguiente Slide">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
+
+            <div class="carousel-track" style="display: flex; gap: 1rem; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; scrollbar-width: none; -ms-overflow-style: none; padding: 0.5rem 0;">
+              <!-- Slide 1 -->
+              <div class="carousel-slide" style="flex: 0 0 100%; scroll-snap-align: start; position: relative; border-radius: var(--radius-md); overflow: hidden; height: 350px;">
+                <img src="./src/assets/carousel-1.jpg" alt="Flota de Transporte Ejecutivo" style="width: 100%; height: 100%; object-fit: cover;" />
+                <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(20, 109, 160, 0.95) 0%, transparent 100%); padding: 2rem; color: #FFFFFF;">
+                  <h3 style="color: #FFFFFF; font-size: 1.5rem; margin-bottom: 0.5rem;">Viaja en familia</h3>
+                  <p style="color: rgba(255,255,255,0.85); font-size: 0.90rem; margin: 0;">Salida familiar de Toluca a Penjamo, Guanajuato.</p>
+                </div>
+              </div>
+
+              <!-- Slide 2 -->
+              <div class="carousel-slide" style="flex: 0 0 100%; scroll-snap-align: start; position: relative; border-radius: var(--radius-md); overflow: hidden; height: 350px;">
+                <img src="./src/assets/carousel-2.jpg" alt="Servicio de Transporte Escolar Seguro" style="width: 100%; height: 100%; object-fit: cover;" />
+                <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(20, 109, 160, 0.95) 0%, transparent 100%); padding: 2rem; color: #FFFFFF;">
+                  <h3 style="color: #FFFFFF; font-size: 1.5rem; margin-bottom: 0.5rem;">Seguridad Escolar Garantizada</h3>
+                  <p style="color: rgba(255,255,255,0.85); font-size: 0.90rem; margin: 0;">Conductores altamente calificados y unidades seguras con monitoreo constante.</p>
+                </div>
+              </div>
+
+              <!-- Slide 3 -->
+              <div class="carousel-slide" style="flex: 0 0 100%; scroll-snap-align: start; position: relative; border-radius: var(--radius-md); overflow: hidden; height: 350px;">
+                <img src="./src/assets/carousel-3.jpg" alt="Unidades de Turismo Modernas" style="width: 100%; height: 100%; object-fit: cover;" />
+                <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(20, 109, 160, 0.95) 0%, transparent 100%); padding: 2rem; color: #FFFFFF;">
+                  <h3 style="color: #FFFFFF; font-size: 1.5rem; margin-bottom: 0.5rem;">Viajes de Turismo y Aventura</h3>
+                  <p style="color: rgba(255,255,255,0.85); font-size: 0.90rem; margin: 0;">Explora destinos increíbles con nuestro servicio de turismo grupal personalizado.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Controls (Dot Indicators) -->
+            <div class="carousel-dots" style="display: flex; justify-content: center; gap: 0.5rem; margin-top: 1rem; margin-bottom: 1rem;">
+              <span class="carousel-dot active" data-slide="0"></span>
+              <span class="carousel-dot" data-slide="1"></span>
+              <span class="carousel-dot" data-slide="2"></span>
+            </div>
           </div>
         </div>
       </section>
@@ -283,6 +340,107 @@
               </div>
               <h3>Despacho en Tiempo Real</h3>
               <p>Los autobuses y trenes se sincronizan directamente con el flujo urbano, garantizando tiempos de espera menores a 5 minutos.</p>
+            </div>
+
+            <!-- Servicio 4 - Ejecutivo -->
+            <div class="glass-card" id="service-card-ejecutivo">
+              <div class="service-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+                  <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+                </svg>
+              </div>
+              <h3>Servicio Ejecutivo</h3>
+              <p>Confort y conectividad para traslados ejecutivos de primer nivel. Climatización, Wi-Fi de alta velocidad y amplios asientos premium reclinables.</p>
+            </div>
+
+            <!-- Servicio 5 - Escolar -->
+            <div class="glass-card" id="service-card-escolar">
+              <div class="service-icon" style="background: rgba(16, 185, 129, 0.1); color: var(--accent-emerald);">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+                  <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+                </svg>
+              </div>
+              <h3>Transporte Escolar</h3>
+              <p>Seguridad y puntualidad garantizada para los estudiantes. Monitoreo GPS en tiempo real, conductores profesionales certificados y rutas optimizadas.</p>
+            </div>
+
+            <!-- Servicio 6 - Turismo -->
+            <div class="glass-card" id="service-card-turismo">
+              <div class="service-icon" style="background: color-mix(in srgb, var(--theme-accent) 25%, transparent); color: var(--accent-violet);">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10" />
+                  <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" />
+                </svg>
+              </div>
+              <h3>Turismo y Viajes</h3>
+              <p>Viajes grupales y turísticos de placer confortables. Flota moderna con amplio maletero, entretenimiento a bordo y rutas personalizadas.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sección de Testimonios / Opiniones de Clientes -->
+      <section class="testimonials-section" id="testimonials" style="padding: 6rem 0; background: linear-gradient(180deg, var(--bg-tertiary) 0%, var(--bg-primary) 100%);">
+        <div class="container">
+          <div class="section-header" style="text-align: center; max-width: 600px; margin: 0 auto 4rem auto;">
+            <div class="badge badge-cyan" id="testimonials-badge">Opiniones de Clientes</div>
+            <h2>Lo que dicen nuestros pasajeros</h2>
+            <p>Conoce las experiencias reales de ejecutivos, familias y viajeros que confían en GUSI Transportes todos los días.</p>
+          </div>
+
+          <div class="grid grid-cols-3">
+            <!-- Testimonial 1 -->
+            <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between;">
+              <div>
+                <!-- Stars -->
+                <div style="color: var(--accent-cyan); margin-bottom: 1rem; display: flex; gap: 0.25rem;">
+                  <span style="font-size: 1.25rem;">★</span><span style="font-size: 1.25rem;">★</span><span style="font-size: 1.25rem;">★</span><span style="font-size: 1.25rem;">★</span><span style="font-size: 1.25rem;">★</span>
+                </div>
+                <p style="font-style: italic; margin-bottom: 1.5rem; color: var(--text-secondary);">"Excelente servicio corporativo. Uso el Servicio Ejecutivo para trasladar a nuestros socios internacionales y la puntualidad y comodidad siempre son impecables. El Wi-Fi a bordo me permite seguir trabajando sin interrupciones."</p>
+              </div>
+              <div style="display: flex; align-items: center; gap: 1rem; border-top: 1px solid var(--border-glass); padding-top: 1rem;">
+                <img src="./src/assets/client-executive.png" alt="Alejandro Ruiz" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 2px solid var(--accent-cyan);" />
+                <div>
+                  <h4 style="font-size: 1rem; font-family: var(--font-heading); margin: 0;">Alejandro Ruiz</h4>
+                  <span style="font-size: 0.75rem; color: var(--text-muted); font-weight: 500;">Director de Logística</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between;">
+              <div>
+                <div style="color: var(--accent-cyan); margin-bottom: 1rem; display: flex; gap: 0.25rem;">
+                  <span style="font-size: 1.25rem;">★</span><span style="font-size: 1.25rem;">★</span><span style="font-size: 1.25rem;">★</span><span style="font-size: 1.25rem;">★</span><span style="font-size: 1.25rem;">★</span>
+                </div>
+                <p style="font-style: italic; margin-bottom: 1.5rem; color: var(--text-secondary);">"Contratamos el servicio de Turismo para un viaje familiar por las rutas turísticas del Valle y fue una experiencia maravillosa. El conductor fue súper amable, el vehículo estaba impecable y con mucho espacio para el equipaje."</p>
+              </div>
+              <div style="display: flex; align-items: center; gap: 1rem; border-top: 1px solid var(--border-glass); padding-top: 1rem;">
+                <img src="./src/assets/client-tourist.png" alt="Sofía Delgado" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 2px solid var(--accent-cyan);" />
+                <div>
+                  <h4 style="font-size: 1rem; font-family: var(--font-heading); margin: 0;">Sofía Delgado</h4>
+                  <span style="font-size: 0.75rem; color: var(--text-muted); font-weight: 500;">Viajera Frecuente</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between;">
+              <div>
+                <div style="color: var(--accent-cyan); margin-bottom: 1rem; display: flex; gap: 0.25rem;">
+                  <span style="font-size: 1.25rem;">★</span><span style="font-size: 1.25rem;">★</span><span style="font-size: 1.25rem;">★</span><span style="font-size: 1.25rem;">★</span><span style="font-size: 1.25rem;">★</span>
+                </div>
+                <p style="font-style: italic; margin-bottom: 1.5rem; color: var(--text-secondary);">"Como estudiante de secundaria, la puntualidad del transporte escolar es fundamental para no perder clases. Mis padres están tranquilos porque el servicio cuenta con monitoreo GPS y siempre viajo seguro."</p>
+              </div>
+              <div style="display: flex; align-items: center; gap: 1rem; border-top: 1px solid var(--border-glass); padding-top: 1rem;">
+                <img src="./src/assets/client-student.png" alt="Mateo Fernández" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 2px solid var(--accent-cyan);" />
+                <div>
+                  <h4 style="font-size: 1rem; font-family: var(--font-heading); margin: 0;">Mateo Fernández</h4>
+                  <span style="font-size: 0.75rem; color: var(--text-muted); font-weight: 500;">Estudiante</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
