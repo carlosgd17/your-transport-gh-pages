@@ -1,6 +1,7 @@
 import './style.css';
 import { initBookingWidget } from './components/bookingWidget.js';
 import { initFareCalculator } from './components/fareCalculator.js';
+import { initAddressAutocomplete } from './components/addressAutocomplete.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   // 1. Initialize Interactive Booking Form Widget & Modals
@@ -8,6 +9,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 2. Initialize Trip Fare Pricing Calculator
   initFareCalculator();
+
+  // 3. Initialize Address Autocomplete
+  const addressInputIds = [
+    'booking-destination',
+    //'booking-origin',
+    //'route-origin',
+    'route-destination',
+    'calc-destination',
+  ];
+  addressInputIds.forEach(id => {
+    const input = document.getElementById(id);
+    if (input) {
+      initAddressAutocomplete(input);
+    }
+  });
 
   // 3. Header scroll styling modifier
   const header = document.getElementById('main-header');

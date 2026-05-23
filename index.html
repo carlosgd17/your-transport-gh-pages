@@ -88,11 +88,11 @@
               <div class="form-row-2">
                 <div class="input-group">
                   <label class="input-label" for="booking-origin">Origen</label>
-                  <input type="text" class="input-field" id="booking-origin" placeholder="Seleccionar Estación" value="Terminal Central" required />
+                  <input type="text" class="input-field" id="booking-origin" placeholder="Seleccionar Estación" value="Terminal Central" required autocomplete="off" />
                 </div>
                 <div class="input-group">
                   <label class="input-label" for="booking-destination">Destino</label>
-                  <input type="text" class="input-field" id="booking-destination" placeholder="Seleccionar Estación" placeholder="¿A dónde vas?" required />
+                  <input type="text" class="input-field" id="booking-destination" placeholder="¿A dónde vas?" required autocomplete="off" />
                 </div>
               </div>
 
@@ -116,11 +116,11 @@
             <form class="widget-form hidden" id="form-route">
               <div class="input-group">
                 <label class="input-label" for="route-origin">Ubicación de Salida</label>
-                <input type="text" class="input-field" id="route-origin" placeholder="Ingresa dirección de salida" required />
+                <input type="text" class="input-field" id="route-origin" placeholder="Ingresa dirección de salida" required autocomplete="off" />
               </div>
               <div class="input-group">
                 <label class="input-label" for="route-destination">Ubicación de Destino</label>
-                <input type="text" class="input-field" id="route-destination" placeholder="Ingresa dirección de destino" required />
+                <input type="text" class="input-field" id="route-destination" placeholder="Ingresa dirección de destino" required autocomplete="off" />
               </div>
               <div class="input-group">
                 <label class="input-label" for="route-preference">Preferencia</label>
@@ -205,7 +205,7 @@
           <div class="section-header">
             <div class="badge badge-cyan" id="calc-badge">Motor de Precios de Viaje</div>
             <h2>Estima tu Tarifa</h2>
-            <p>Calcula tarifas de boletos precisas para autobuses, trenes y lanzaderas según tus destinos, horarios y clase de embarque preferida.</p>
+            <p>Cotiza tu viaje según tu destino, horarios y tipo de transporte.</p>
           </div>
 
           <div class="map-container" style="min-height: auto;">
@@ -220,28 +220,35 @@
                   </select>
                 </div>
                 <div class="input-group">
-                  <label class="input-label" for="calc-class">Clase de Embarque</label>
+                  <label class="input-label" for="calc-class">Tipo</label>
                   <select class="input-field" id="calc-class" name="classGrade">
-                    <option value="standard">Clase Turista</option>
-                    <option value="premium">Clase Ejecutiva (+50%)</option>
-                    <option value="first">Primera Clase (+140%)</option>
+                    <option value="standard">Ejecutivo</option>
+                    <option value="premium">Escolar</option>
+                    <option value="first">Turismo</option>
                   </select>
                 </div>
               </div>
 
               <div class="form-row-2">
                 <div class="input-group">
-                  <label class="input-label" for="calc-origin">Estación de Origen</label>
+                  <label class="input-label" for="calc-origin">Origen</label>
+                  <!--
+                  <input type="text" class="input-field" id="route-origin" placeholder="Ingresa dirección de salida" required autocomplete="off" />
+                  -->
                   <select class="input-field" id="calc-origin" name="origin">
-                    <option value="central">Terminal Central</option>
-                    <option value="north">Depósito Puerta Norte</option>
-                    <option value="east">Estación Valle Este</option>
-                    <option value="south">Puerto Bahía Sur</option>
-                    <option value="west">Centro Tecnológico Costa Oeste</option>
+                    <option value="central">Temoaya</option>
+                    <option value="north">Toluca</option>
+                    <option value="east">Metepec</option>
+                    <option value="south">Xonacatlàn</option>
+                    <option value="west">Jiquipilco</option>
                   </select>
                 </div>
                 <div class="input-group">
-                  <label class="input-label" for="calc-destination">Estación de Destino</label>
+                  <label class="input-label" for="calc-destination">Destino</label>
+                  
+                  <input type="text" class="input-field" id="calc-destination" placeholder="Ingresa dirección de destino" required autocomplete="off" />
+                  
+                  <!--
                   <select class="input-field" id="calc-destination" name="destination">
                     <option value="east">Estación Valle Este</option>
                     <option value="central">Terminal Central</option>
@@ -249,6 +256,7 @@
                     <option value="south">Puerto Bahía Sur</option>
                     <option value="west">Centro Tecnológico Costa Oeste</option>
                   </select>
+                  -->
                 </div>
               </div>
 
@@ -460,7 +468,7 @@
                 <path d="M13 17h2" />
                 <path d="M14 9H9" />
               </svg>
-              YourTransport
+              GUSI Transportes
             </a>
             <p>Redefiniendo el transporte diario con algoritmos modernos de enrutamiento y soluciones de confort para el pasajero.</p>
           </div>
@@ -494,7 +502,7 @@
         </div>
 
         <div class="footer-bottom">
-          <p>&copy; 2026 YourTransport. Todos los derechos reservados.</p>
+          <p>&copy; 2026 GUSI Transportes. Todos los derechos reservados.</p>
           <div style="display: flex; gap: 1.5rem;">
             <a href="#" id="foot-link-privacy">Política de Privacidad</a>
             <a href="#" id="foot-link-terms">Términos de Servicio</a>
