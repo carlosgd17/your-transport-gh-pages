@@ -98,7 +98,7 @@ function showTicketConfirmationModal(data) {
   modal.style.left = '0';
   modal.style.width = '100vw';
   modal.style.height = '100vh';
-  modal.style.backgroundColor = 'rgba(4, 7, 14, 0.85)';
+  modal.style.backgroundColor = 'color-mix(in srgb, var(--theme-primary) 65%, transparent)';
   modal.style.backdropFilter = 'blur(12px)';
   modal.style.webkitBackdropFilter = 'blur(12px)';
   modal.style.display = 'flex';
@@ -114,7 +114,7 @@ function showTicketConfirmationModal(data) {
       <button id="close-modal-btn" style="position: absolute; top: 1rem; right: 1rem; background: none; border: none; color: var(--text-muted); font-size: 1.5rem; cursor: pointer;">&times;</button>
       
       <!-- Sparkly Success Header -->
-      <div style="width: 60px; height: 60px; border-radius: 50%; background: rgba(0, 242, 254, 0.1); display: flex; align-items: center; justify-content: center; color: var(--accent-cyan); margin: 0 auto 1.5rem auto;">
+      <div style="width: 60px; height: 60px; border-radius: 50%; background: color-mix(in srgb, var(--theme-primary) 15%, transparent); display: flex; align-items: center; justify-content: center; color: var(--accent-cyan); margin: 0 auto 1.5rem auto;">
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
           <polyline points="20 6 9 17 4 12"></polyline>
         </svg>
@@ -124,12 +124,12 @@ function showTicketConfirmationModal(data) {
       <p style="font-size: 0.9rem; margin-bottom: 2rem;">Tu boleto de viaje ha sido generado con éxito.</p>
       
       <!-- Ticket Card representation -->
-      <div style="background: rgba(255, 255, 255, 0.02); border: 1px dashed rgba(255, 255, 255, 0.1); border-radius: var(--radius-sm); padding: 1.25rem; margin-bottom: 2rem; text-align: left; position: relative;">
+      <div style="background: color-mix(in srgb, var(--theme-primary) 2%, transparent); border: 1px dashed color-mix(in srgb, var(--theme-primary) 15%, transparent); border-radius: var(--radius-sm); padding: 1.25rem; margin-bottom: 2rem; text-align: left; position: relative;">
         <!-- Left & Right punched holes visual effect -->
-        <div style="position: absolute; width: 16px; height: 16px; background: #060913; border-radius: 50%; top: 50%; left: -9px; transform: translateY(-50%); border-right: 1px dashed rgba(255, 255, 255, 0.1);"></div>
-        <div style="position: absolute; width: 16px; height: 16px; background: #060913; border-radius: 50%; top: 50%; right: -9px; transform: translateY(-50%); border-left: 1px dashed rgba(255, 255, 255, 0.1);"></div>
+        <div style="position: absolute; width: 16px; height: 16px; background: color-mix(in srgb, var(--theme-primary) 65%, transparent); border-radius: 50%; top: 50%; left: -9px; transform: translateY(-50%); border-right: 1px dashed color-mix(in srgb, var(--theme-primary) 15%, transparent);"></div>
+        <div style="position: absolute; width: 16px; height: 16px; background: color-mix(in srgb, var(--theme-primary) 65%, transparent); border-radius: 50%; top: 50%; right: -9px; transform: translateY(-50%); border-left: 1px dashed color-mix(in srgb, var(--theme-primary) 15%, transparent);"></div>
         
-        <div style="display: flex; justify-content: space-between; margin-bottom: 0.75rem; border-bottom: 1px solid rgba(255, 255, 255, 0.05); padding-bottom: 0.5rem;">
+        <div style="display: flex; justify-content: space-between; margin-bottom: 0.75rem; border-bottom: 1px solid color-mix(in srgb, var(--theme-primary) 8%, transparent); padding-bottom: 0.5rem;">
           <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: 500;">ID DE BOLETO</span>
           <span style="font-family: var(--font-heading); font-weight: 700; color: var(--accent-cyan); font-size: 0.9rem;">${data.ticketId}</span>
         </div>
@@ -195,7 +195,7 @@ function showRouteResultsModal(start, dest, preference) {
   modal.style.left = '0';
   modal.style.width = '100vw';
   modal.style.height = '100vh';
-  modal.style.backgroundColor = 'rgba(4, 7, 14, 0.85)';
+  modal.style.backgroundColor = 'color-mix(in srgb, var(--theme-primary) 65%, transparent)';
   modal.style.backdropFilter = 'blur(12px)';
   modal.style.webkitBackdropFilter = 'blur(12px)';
   modal.style.display = 'flex';
@@ -208,13 +208,13 @@ function showRouteResultsModal(start, dest, preference) {
   let routeOptionHTML = '';
   if (preference === 'fastest') {
     routeOptionHTML = `
-      <div style="background: rgba(0, 242, 254, 0.05); border: 1px solid rgba(0, 242, 254, 0.2); border-radius: var(--radius-sm); padding: 1rem; margin-bottom: 1rem; position: relative;">
+      <div style="background: color-mix(in srgb, var(--theme-primary) 8%, transparent); border: 1px solid color-mix(in srgb, var(--theme-primary) 25%, transparent); border-radius: var(--radius-sm); padding: 1rem; margin-bottom: 1rem; position: relative;">
         <span class="badge badge-cyan" style="position: absolute; top: 0.75rem; right: 0.75rem;">Más Rápido</span>
         <h4 style="font-size: 1rem; margin-bottom: 0.25rem;">Hyper-Rail Línea Roja</h4>
         <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.5rem;">Viaje: 12 minutos (Directo)</p>
         <span style="font-weight: 700; color: var(--accent-cyan);">$5.50</span>
       </div>
-      <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-glass); border-radius: var(--radius-sm); padding: 1rem; opacity: 0.6;">
+      <div style="background: var(--bg-secondary); border: 1px solid var(--border-glass); border-radius: var(--radius-sm); padding: 1rem; opacity: 0.6;">
         <h4 style="font-size: 1rem; margin-bottom: 0.25rem;">Autobús Expreso B-2</h4>
         <p style="font-size: 0.85rem; color: var(--text-secondary);">Viaje: 22 minutos (1 transbordo)</p>
       </div>
@@ -227,15 +227,15 @@ function showRouteResultsModal(start, dest, preference) {
         <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.5rem;">Viaje: 28 minutos (Directo)</p>
         <span style="font-weight: 700; color: var(--accent-emerald);">$2.25</span>
       </div>
-      <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-glass); border-radius: var(--radius-sm); padding: 1rem; opacity: 0.6;">
+      <div style="background: var(--bg-secondary); border: 1px solid var(--border-glass); border-radius: var(--radius-sm); padding: 1rem; opacity: 0.6;">
         <h4 style="font-size: 1rem; margin-bottom: 0.25rem;">Línea Expresa Hyper-Rail</h4>
         <p style="font-size: 0.85rem; color: var(--text-secondary);">Viaje: 10 minutos (Directo) | $5.50</p>
       </div>
     `;
   } else {
     routeOptionHTML = `
-      <div style="background: rgba(139, 92, 246, 0.05); border: 1px solid rgba(139, 92, 246, 0.2); border-radius: var(--radius-sm); padding: 1rem; margin-bottom: 1rem; position: relative;">
-        <span class="badge badge-cyan" style="background: rgba(139, 92, 246, 0.1); color: var(--accent-violet); border-color: rgba(139, 92, 246, 0.2); position: absolute; top: 0.75rem; right: 0.75rem;">Eco-Opción</span>
+      <div style="background: color-mix(in srgb, var(--theme-accent) 15%, transparent); border: 1px solid color-mix(in srgb, var(--theme-accent) 45%, transparent); border-radius: var(--radius-sm); padding: 1rem; margin-bottom: 1rem; position: relative;">
+        <span class="badge badge-cyan" style="background: color-mix(in srgb, var(--theme-accent) 30%, transparent); color: var(--accent-violet); border-color: color-mix(in srgb, var(--theme-accent) 45%, transparent); position: absolute; top: 0.75rem; right: 0.75rem;">Eco-Opción</span>
         <h4 style="font-size: 1rem; margin-bottom: 0.25rem;">Lanzadera Eléctrica Loop</h4>
         <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.5rem;">Cero emisiones, flota 100% alimentada con energía solar.</p>
         <span style="font-weight: 700; color: var(--accent-violet);">$2.50</span>

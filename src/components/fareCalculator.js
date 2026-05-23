@@ -197,12 +197,12 @@ export function initFareCalculator() {
         </h3>
 
         <!-- Ticket Route Detail -->
-        <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.5rem; background: rgba(255, 255, 255, 0.02); padding: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-glass);">
+        <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.5rem; background: color-mix(in srgb, var(--theme-primary) 2%, transparent); padding: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-glass);">
           <div style="display: flex; align-items: center; gap: 0.75rem;">
             <div style="width: 10px; height: 10px; border-radius: 50%; background: var(--accent-cyan); box-shadow: var(--glow-cyan);"></div>
             <span style="font-weight: 600; font-size: 0.95rem;">${details.originName}</span>
           </div>
-          <div style="border-left: 2px dashed rgba(255,255,255,0.15); height: 18px; margin-left: 4px;"></div>
+          <div style="border-left: 2px dashed color-mix(in srgb, var(--theme-primary) 15%, transparent); height: 18px; margin-left: 4px;"></div>
           <div style="display: flex; align-items: center; gap: 0.75rem;">
             <div style="width: 10px; height: 10px; border-radius: 50%; background: var(--accent-violet);"></div>
             <span style="font-weight: 600; font-size: 0.95rem;">${details.destName}</span>
@@ -231,8 +231,8 @@ export function initFareCalculator() {
         </div>
 
         <!-- Metrics Grid -->
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem; border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 1.25rem;">
-          <div style="background: rgba(255,255,255,0.01); border: 1px solid var(--border-glass); border-radius: var(--radius-sm); padding: 0.75rem; text-align: center;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem; border-top: 1px solid var(--border-glass); padding-top: 1.25rem;">
+          <div style="background: color-mix(in srgb, var(--theme-primary) 2%, transparent); border: 1px solid var(--border-glass); border-radius: var(--radius-sm); padding: 0.75rem; text-align: center;">
             <span style="font-size: 0.75rem; color: var(--text-muted); display: block;">TIEMPO DE VIAJE</span>
             <span style="font-weight: 700; font-size: 1.1rem; color: var(--text-primary);">${details.durationStr}</span>
           </div>
@@ -243,7 +243,7 @@ export function initFareCalculator() {
         </div>
 
         <!-- Price Breakdown -->
-        <div style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem; margin-bottom: 1.5rem; border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 1rem;">
+        <div style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem; margin-bottom: 1.5rem; border-top: 1px solid var(--border-glass); padding-top: 1rem;">
           <div style="display: flex; justify-content: space-between; color: var(--text-secondary);">
             <span>Subtotal (${details.distance} millas)</span>
             <span>$${details.subtotal}</span>
@@ -259,9 +259,9 @@ export function initFareCalculator() {
             <span>${details.classLabel}</span>
           </div>
           
-          <div style="display: flex; justify-content: space-between; align-items: center; font-weight: 700; font-size: 1.35rem; color: var(--text-primary); border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 0.75rem; margin-top: 0.5rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; font-weight: 700; font-size: 1.35rem; color: var(--text-primary); border-top: 1px solid var(--border-glass); padding-top: 0.75rem; margin-top: 0.5rem;">
             <span>Tarifa Estimada</span>
-            <span style="color: var(--accent-cyan); text-shadow: 0 0 10px rgba(0,242,254,0.25);">$${details.grandTotal}</span>
+            <span style="color: var(--accent-cyan); text-shadow: 0 0 10px color-mix(in srgb, var(--theme-primary) 25%, transparent);">$${details.grandTotal}</span>
           </div>
         </div>
 
