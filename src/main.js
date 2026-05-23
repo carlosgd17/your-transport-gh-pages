@@ -54,4 +54,32 @@ document.addEventListener('DOMContentLoaded', () => {
       alert('Se ha solicitado una conexión segura al Portal de Clientes. Los autenticadores están inicializados en el entorno de desarrollo (Sandbox).');
     });
   }
+
+  // Mobile Navigation toggle logic
+  const mobileToggle = document.getElementById('mobile-nav-toggle');
+  const mainNav = document.getElementById('main-nav');
+  if (mobileToggle && mainNav) {
+    mobileToggle.addEventListener('click', () => {
+      mobileToggle.classList.toggle('active');
+      mainNav.classList.toggle('active');
+    });
+
+    // Close menu when clicking on links
+    const navLinksList = mainNav.querySelectorAll('.nav-links a');
+    navLinksList.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileToggle.classList.remove('active');
+        mainNav.classList.remove('active');
+      });
+    });
+  }
+
+  // Client Portal Sign-in mock interaction for mobile
+  const btnLoginMobile = document.getElementById('btn-login-mobile');
+  if (btnLoginMobile) {
+    btnLoginMobile.addEventListener('click', (e) => {
+      e.preventDefault();
+      alert('Se ha solicitado una conexión segura al Portal de Clientes. Los autenticadores están inicializados en el entorno de desarrollo (Sandbox).');
+    });
+  }
 });
